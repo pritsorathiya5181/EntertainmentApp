@@ -1,5 +1,6 @@
 import 'package:MovieApp/model/movie_response.dart';
 import 'package:MovieApp/repository/repository.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:rxdart/rxdart.dart';
 
 class MoviesListByGenreBloc {
@@ -11,7 +12,10 @@ class MoviesListByGenreBloc {
     _subject.sink.add(response);
   }
 
-  dispose() {
+  void drainStream() { _subject.value = null; }
+  @mustCallSuper
+  void dispose() async {
+    await _subject.drain();
     _subject.close();
   }
 
