@@ -14,7 +14,7 @@ class _PersonListState extends State<PersonList> {
   @override
   void initState() {
     super.initState();
-    personsBloc.getPersons();
+    personsBloc..getPersons();
   }
 
   @override
