@@ -1,3 +1,4 @@
+import 'package:MovieApp/widgets/genres.dart';
 import 'package:MovieApp/widgets/now_playing.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         children: <Widget>[
           NowPlaying(),
+          GenresScreen(),
         ],
       ),
     );
